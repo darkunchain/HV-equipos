@@ -3,23 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MaterialModule} from './material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WelcomeComponent } from './app_components/welcome/welcome.component';
 import { DashboardComponent } from './app_components/dashboard/dashboard.component';
+import { DialogFormComponent } from './app_components/dialog-form/dialog-form.component';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    DialogFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
+    MaterialModule,
 
   ],
   providers: [],

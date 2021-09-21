@@ -1,6 +1,135 @@
 <div class="jumbotron mt-4">
-    <h1 class="display-4">Hoja de vida de equipos</h1>
+  <h1 class="display-4">Hoja de vida de equipos</h1>
 </div>
+
+<!-- %%%%%%%%%%%%%% Boton Modal %%%%%%%%%%%%%% -->
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#formModal">Agregar
+    Equipo</button>
+</div>
+
+<!-- %%%%%%%%%%%%%% Modal %%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%% header Modal %%%%%%%%%%%%%% -->
+<div class="modal fade" id="formModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Equipo nuevo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
+        <form>
+
+          <div class="input-group mb-3">
+            <div class="row g-2">
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="nombre">
+                  <label for="floatingInput">Nombre de equipo</label>
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Marca o fabricante</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-2">
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Serial del equipo</label>
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Placa de inventario</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-1">
+            <div class="col-md">
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Descripcion del equipo" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Descripción</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="input-group mb-3">
+            <div class="row g-2">
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="container">
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker9'>
+              <input type='text' class="form-control" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar">
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <script type="text/javascript">
+            $(function () {
+              $('#datetimepicker9').datetimepicker({
+                viewMode: 'years'
+              });
+            });
+          </script>
+          </div>
+
+
+
+
+
+
+
+
+
+        </form>
+
+        <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->
+
 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -22,8 +151,8 @@
       <td>@mdo</td>
       <td>@mdo</td>
       <td>@mdo</td>
-      <img src="../public/open-iconic/svg/edit.svg" alt="icon name">
-      
+      <td><img class="icon" src="open-iconic/svg/pencil.svg" alt="box"></td>
+
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -32,6 +161,7 @@
       <td>@fat</td>
       <td>@mdo</td>
       <td>@mdo</td>
-    </tr>    
+      <td><img class="icon" src="open-iconic/svg/pencil.svg" alt="box"></td>
+    </tr>
   </tbody>
 </table>

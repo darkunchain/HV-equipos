@@ -1,5 +1,23 @@
-.icon {
-    width: 16px;
-    height: 16px;
-    fill: #f00;
-  }
+.icon16 {
+  width: 16px;
+  height: 16px;
+  fill: #f00;
+}
+
+.icon32 {
+  width: 32px;
+  height: 32px;
+  fill: #f00;
+}
+
+.input-group {
+  position: relative;
+  display: block!important;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.card {
+  padding: 10px!important;
+}

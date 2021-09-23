@@ -1,0 +1,172 @@
+<div class="modal fade" id="formModalProveedores" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Nuevo Proveedor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
+        <form action="/proveedores" method="POST">
+
+          <div class="card border-dark mb-4">
+            <div class="title-card-text">Administrativo</div>
+            <div class="card-body">
+
+              <div class="row g-1">
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="nombre">
+                    <label for="floatingInput">Nombre del Representante</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-2">
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="modelo">
+                    <label for="floatingInput">telefono</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="serial">
+                    <label for="floatingInput">Correo Electronico</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-1">
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Información adicional</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-2">
+
+                <div class="col-md">
+
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker date">
+                    <input placeholder="Select date" type="text" id="example" class="form-control"
+                      name="fechaInstalacion">
+                    <label for="example">Fecha - Inicio de Contrato</label>
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>
+
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#example').datetimepicker({
+                        defaultDate: "11/1/2013",
+                        format: 'dd/mm/yyyy-hh:ii',
+                        autoclose: true,
+                        todayBtn: true,
+                        disabledDates: [
+                          moment("12/25/2013"),
+                          new Date(2013, 11 - 1, 21),
+                          "11/22/2013 00:53"
+                        ]
+                      });
+                    });
+                  </script>
+
+                </div>
+
+                <div class="col-md">
+
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="text" id="example" class="form-control" name="fechaRetiro">
+                    <label for="example">Fecha - Fin de Contrato</label>
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>
+
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#datetimepicker5').datetimepicker({
+                        defaultDate: "11/1/2013",
+                        format: 'dd/mm/yyyy-hh:ii',
+                        autoclose: true,
+                        todayBtn: true,                        
+                      });
+                    });
+                  </script>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="card border-dark mb-2">
+            <div class="title-card-text">Soporte</div>
+            <div class="card-body">
+
+              <div class="row g-1 mb-2">
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="ipGestion">
+                    <label for="floatingInput">URL de soporte o generacion de tickets</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-2 mb-2">
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="ipGestion">
+                    <label for="floatingInput">Telefono</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="macAddress">
+                    <label for="floatingInput">Correo electrónico</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-1">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Información adicional</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->

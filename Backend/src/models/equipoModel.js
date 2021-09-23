@@ -1,7 +1,9 @@
 const { Schema,model } = require('mongoose')
 
+
 const equipoSchema = new Schema({
-    Activo: Boolean,
+    
+    activo: String,
     serial: {
         type:String,    
         required:true,    
@@ -15,16 +17,16 @@ const equipoSchema = new Schema({
     proveedor: {type: String,default: ''},
     fechaInstalacion: {type: Date,default: ''},
     fechaRetiro: {type: Date,default: ''},
-    fechaIniSoporte: {type: Date,default: ''},
     fechaFinSoporte: {type: Date,default: ''},
+    fechaFinLicencia: {type: Date,default: ''},
     ipGestion: {type: String,default: ''},
     macAddress: {type: String,default: ''},
     sistemaOperativo: {type: String,default: ''},
     rack: {type: String,default: ''},
     urack: {type: Number,default: ''},
-
-    
-
+    linea: {type: String,default: ''},
+    tipo: {type: String,default: ''},
+    infoAdicional: {type: String,default: ''},
 })
 
-module.exports = model('equipo', equipoSchema)
+module.exports = model('equipoModel', equipoSchema)

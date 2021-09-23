@@ -1,0 +1,323 @@
+<div class="modal fade" id="formModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Equipo nuevo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
+        <form action="/" method="POST">
+
+          <div class="card border-dark mb-2">
+            <div class="card-body">
+
+              <div class="row g-3">
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="nombre">
+                    <label for="floatingInput">Nombre de equipo</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="marca">
+                    <label for="floatingInput">Marca o fabricante</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="proveedor">
+                    <label for="floatingInput">proveedor</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-3">
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="modelo">
+                    <label for="floatingInput">Modelo</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="serial">
+                    <label for="floatingInput">Serial del equipo</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="placa">
+                    <label for="floatingInput">Placa de inventario</label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row g-1">
+              <div class="col-md">
+                <div class="form-floating mb-2">
+                  <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
+                  <label for="floatingTextarea">Descripción</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="card border-dark mb-2">
+
+            <div class="card-body">
+
+              <div class="row g-4">
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="ipGestion">
+                    <label for="floatingInput">Direccion IP</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="macAddress">
+                    <label for="floatingInput">Direccion MAC</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="rack">
+                    <label for="floatingInput">Rack</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" name="urack">
+                    <label for="floatingInput">Unidad de Rack</label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card border-dark mb-2">
+
+            <div class="card-body">
+
+              <div class="row g-4">
+
+                <div class="col-md">
+                  <select class="form-select" aria-label="Default select example" name="linea">
+                    <option selected>Linea de servicio</option>
+                    <option value="1">LAN</option>
+                    <option value="2">Seguridad</option>
+                    <option value="3">WAN</option>
+                    <option value="4">Infraestructura</option>
+                    <option value="5">Desarrollo</option>
+                    <option value="6">Otro</option>
+                  </select>
+                </div>
+
+                <div class="col-md">
+                  <select class="form-select" aria-label="Default select example" name="tipo">
+                    <option selected>Tipo de equipo</option>
+                    <option value="1">Appliance</option>
+                    <option value="2">Servidor Fisico</option>
+                    <option value="3">Servidor Virtual</option>
+                    <option value="4">Switch</option>
+                    <option value="5">Router</option>
+                    <option value="6">AP</option>
+                    <option value="7">Teléfono</option>
+                  </select>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked name="activo">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Equipo activo</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-1">
+
+                <div class="col-md">
+                  <div class="form-floating mt-3">
+                    <textarea class="form-control" name="sistemaOperativo" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Información del Sistema Operativo</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-1">
+
+                <div class="col-md">
+                  <div class="form-floating mt-3">
+                    <textarea class="form-control" name="infoAdicional" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Información Adicional relevante</label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="card border-dark mb-2">
+
+            <div class="card-body">
+
+              <div class="row g-2">
+
+                <div class="col-md">
+
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker date">
+                    <input placeholder="Select date" type="text" id="example" class="form-control"
+                      name="fechaInstalacion">
+                    <label for="example">Fecha de Instalacion</label>
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>
+
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#example').datetimepicker({
+                        defaultDate: "11/1/2013",
+                        format: 'dd/mm/yyyy-hh:ii',
+                        autoclose: true,
+                        todayBtn: true
+                        disabledDates: [
+                          moment("12/25/2013"),
+                          new Date(2013, 11 - 1, 21),
+                          "11/22/2013 00:53"
+                        ]
+                      });
+                    });
+                  </script>
+
+                </div>
+
+                <div class="col-md">
+
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="text" id="example" class="form-control" name="fechaRetiro">
+                    <label for="example">Fecha de retiro</label>
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>
+
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#datetimepicker5').datetimepicker({
+                        defaultDate: "11/1/2013",
+                        format: 'dd/mm/yyyy-hh:ii',
+                        autoclose: true,
+                        todayBtn: true
+                    disabledDates: [
+                          moment("12/25/2013"),
+                          new Date(2013, 11 - 1, 21),
+                          "11/22/2013 00:53"
+                        ]
+                      });
+                    });
+                  </script>
+                </div>
+
+              </div>
+
+              <div class="row g-2">
+
+                <div class="col-md">
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="text" id="example" class="form-control"
+                      name="fechaFinSoporte">
+                    <label for="example">Vigencia de garantia o soporte de fabrica</label>
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>
+
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#datetimepicker5').datetimepicker({
+                        defaultDate: "11/1/2013",
+                        format: 'dd/mm/yyyy-hh:ii',
+                        autoclose: true,
+                        todayBtn: true
+                        disabledDates: [
+                          moment("12/25/2013"),
+                          new Date(2013, 11 - 1, 21),
+                          "11/22/2013 00:53"
+                        ]
+                      });
+                    });
+                  </script>
+
+                </div>
+
+                <div class="col-md">
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="text" id="example" class="form-control"
+                      name="fechaFinLicencia">
+                    <label for="example">Vigencia de Licenciamiento</label>
+                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                  </div>
+
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#datetimepicker5').datetimepicker({
+                        defaultDate: "11/1/2013",
+                        format: 'dd/mm/yyyy-hh:ii',
+                        autoclose: true,
+                        todayBtn: true
+                        disabledDates: [
+                          moment("12/25/2013"),
+                          new Date(2013, 11 - 1, 21),
+                          "11/22/2013 00:53"
+                        ]
+                      });
+                    });
+                  </script>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->

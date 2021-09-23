@@ -21,3 +21,31 @@
 .card {
   padding: 10px!important;
 }
+
+.md-form.md-outline label {  
+  font-size: 1.2rem!important;
+  color: #353535!important;  
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */  
+  font-size: 0.7rem!important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: rgb(117, 117, 117) !important;
+}
+
+.navbar-brand {  
+  margin-left: 1rem; 
+}
+
+img, svg {
+  vertical-align: middle;
+  margin-right: 1rem;
+  width: 3rem;
+}
+
+.form-floating>label {  
+  padding: .5rem .5rem; 
+}

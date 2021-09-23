@@ -29,8 +29,10 @@ app.use(session({
     saveUninitialized: true
 }))
 
-app.use(require('./routes/equipos'));
-app.use(require('./routes/actividades'));
+app.use(require('./routes/equiposRoutes'));
+app.use(require('./routes/actividadesRoutes'));
+app.use(require('./routes/testRoutes'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 

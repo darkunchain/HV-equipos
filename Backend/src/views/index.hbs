@@ -1,5 +1,5 @@
 <div class="jumbotron mt-4">
-  <h1 class="display-4">Hoja de vida de equipos</h1>
+  <h1>Hoja de vida de equipos</h1>
 </div>
 
 <!-- %%%%%%%%%%%%%% Boton Modal %%%%%%%%%%%%%% -->
@@ -10,307 +10,18 @@
 
 <!-- %%%%%%%%%%%%%% Modal %%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%% header Modal %%%%%%%%%%%%%% -->
-<div class="modal fade" id="formModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="formModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="formModalLabel">Equipo nuevo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-
-        <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
-        <form>
-
-          <div class="card border-dark mb-3">
-            <div class="card-body">
-
-              <div class="row g-3">
-
-                <div class="col-md">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="nombre">
-                    <label for="floatingInput">Nombre de equipo</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="marca">
-                    <label for="floatingInput">Marca o fabricante</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="proveedor">
-                    <label for="floatingInput">proveedor</label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="row g-3">
-
-                <div class="col-md">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="modelo">
-                    <label for="floatingInput">Modelo</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="serial">
-                    <label for="floatingInput">Serial del equipo</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="placa">
-                    <label for="floatingInput">Placa de inventario</label>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="row g-1">
-              <div class="col-md">
-                <div class="form-floating mb-3">
-                  <textarea class="form-control" placeholder="Descripcion del equipo" id="floatingTextarea"></textarea>
-                  <label for="floatingTextarea">Descripción</label>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-
-          <div class="card border-dark mb-3">
-
-            <div class="card-body">
-
-              <div class="row g-4">
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="ip">
-                    <label for="floatingInput">Direccion IP</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="mac">
-                    <label for="floatingInput">Direccion MAC</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="rack">
-                    <label for="floatingInput">Rack</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="urack">
-                    <label for="floatingInput">Unidad de Rack</label>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="card border-dark mb-3">
-
-            <div class="card-body">
-
-              <div class="row g-4">
-
-                <div class="col-md">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Linea de servicio</option>
-                    <option value="1">LAN</option>
-                    <option value="2">Seguridad</option>
-                    <option value="3">WAN</option>
-                    <option value="4">Infraestructura</option>
-                    <option value="5">Desarrollo</option>
-                    <option value="6">Otro</option>
-                  </select>
-                </div>
-
-                <div class="col-md">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Tipo de equipo</option>
-                    <option value="1">Appliance</option>
-                    <option value="2">Servidor Fisico</option>
-                    <option value="3">Servidor Virtual</option>
-                    <option value="4">Switch</option>
-                    <option value="5">Router</option>
-                    <option value="6">AP</option>
-                    <option value="7">Teléfono</option>
-                  </select>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Equipo activo</label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="row g-1">
-
-                <div class="col-md">
-                  <div class="form-floating mt-3">
-                    <textarea class="form-control" placeholder="Sistema Operativo" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Información del Sistema Operativo</label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="row g-1">
-
-                <div class="col-md">
-                  <div class="form-floating mt-3">
-                    <textarea class="form-control" placeholder="Informacion adicional" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Información Adicional relevante</label>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-
-
-          <div class="container">
-            <div class="form-group">
-              <div class='input-group date' id='datetimepicker9'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                  <span class="oi oi-calendar" title="Calendario" aria-hidden="true">
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <script type="text/javascript">
-              $(function () {
-                $('#datetimepicker9').datetimepicker({
-                  viewMode: 'years'
-                });
-              });
-            </script>
-          </div>
-
-
-
-          <div class="container">
-            <div class="row">
-              <div class='col-sm-6'>
-                <div class="form-group">
-                  <div class='input-group date' id='datetimepicker5'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                      <span class="oi oi-calendar"></span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <script type="text/javascript">
-                $(function () {
-                  $('#datetimepicker5').datetimepicker({
-                    defaultDate: "11/1/2013",
-                    format: 'dd/mm/yyyy-hh:ii',
-                    autoclose: true,
-                    todayBtn: true
-                    disabledDates: [
-                      moment("12/25/2013"),
-                      new Date(2013, 11 - 1, 21),
-                      "11/22/2013 00:53"
-                    ]
-                  });
-                });
-              </script>
-            </div>
-          </div>
-
-
-          <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
-            <input placeholder="Select date" type="text" id="example" class="form-control">
-            <label for="example">Try me...</label>
-            <i class="fas fa-calendar input-prefix" tabindex=0></i>
-          </div>
-
-          <script type="text/javascript">
-            $(function () {
-              $('#datetimepicker5').datetimepicker({
-                defaultDate: "11/1/2013",
-                format: 'dd/mm/yyyy-hh:ii',
-                autoclose: true,
-                todayBtn: true
-                    disabledDates: [
-                  moment("12/25/2013"),
-                  new Date(2013, 11 - 1, 21),
-                  "11/22/2013 00:53"
-                ]
-              });
-            });
-          </script>
-
-
-
-          <div class="md-form md-outline input-with-post-icon datepicker" id="customDays">
-            <input placeholder="Select date" type="text" id="Customization" class="form-control">
-            <label for="Customization">Try me...</label>
-            <i class="fas fa-calendar input-prefix" tabindex=0></i>
-          </div>
-          <script type="text/javascript">
-            $('.datepicker').datepicker({
-              weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-              showMonthsShort: true
-            })
-          </script>
-
-
-
-
-
-
-
-        </form>
-
-        <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+{{#each errors }}
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 
-<!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->
+{{/each}}
+
+{{>modalForm}}
 
 
 <table class="table table-striped">
@@ -321,29 +32,26 @@
       <th scope="col">Marca</th>
       <th scope="col">Modelo</th>
       <th scope="col">Serial</th>
+      <th scope="col">Proveedor</th>
       <th scope="col">Descripción</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
+    {{#each equipos }}
+    
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      
+      <th scope="row">{{@index}}</th>
+      <td>{{nombre}}</td>
+      <td>{{marca}}</td>
+      <td>{{modelo}}</td>
+      <td>{{serial}}</td>
+      <td>{{proveedor}}</td>
+      <td>{{descripcion}}</td>
       <td><img class="icon16" src="open-iconic/svg/pencil.svg" alt="box"></td>
 
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><img class="icon16" src="open-iconic/svg/pencil.svg" alt="box"></td>
-    </tr>
+    {{/each}}    
   </tbody>
 </table>

@@ -34,7 +34,7 @@ app.use(require('./routes/actividadesRoutes'));
 app.use(require('./routes/testRoutes'));
 app.use(require('./routes/proveedoresRoutes'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 

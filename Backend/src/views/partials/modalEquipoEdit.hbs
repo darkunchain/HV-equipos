@@ -1,290 +1,319 @@
 <div class="container">
 
+  <div class="container-edit">
+    <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
+    <form action="/equipos/edit/{{equipo._id}}?_method=PUT" method="POST" class="p-4">
+    <input type="hidden" name="_method" value="PUT">
+
+      <div class="card border-dark mb-2">
+        <div class="card-body">
 
 
 
-        <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
-        <form action="/" method="POST">
+          <div class="row g-3">
 
-          <div class="card border-dark mb-2">
-            <div class="card-body">
-
-              <div class="row g-3">
-
-                <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="nombre" value="{{reqid.nombre}}" disabled>
-                    <label for="floatingInput">Nombre de equipo</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="marca" value="{{reqid.marca}}" disabled>
-                    <label for="floatingInput">Marca o fabricante {{reqid.marca}}</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="proveedor">
-                    <label for="floatingInput">proveedor</label>
-                  </div>
-                </div>
-
+            <div class="col-md">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control form-control-sm" id="floatingInput" name="nombre"
+                  value="{{equipo.nombre}}" disabled>
+                <label for="floatingInput">Nombre de equipo</label>
               </div>
-
-              <div class="row g-3">
-
-                <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="modelo">
-                    <label for="floatingInput">Modelo</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="serial" disabled>
-                    <label for="floatingInput">Serial del equipo</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="placa">
-                    <label for="floatingInput">Placa de inventario</label>
-                  </div>
-                </div>
-
-              </div>
-
             </div>
 
-            <div class="row g-1">
-              <div class="col-md">
-                <div class="form-floating mb-2">
-                  <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
-                  <label for="floatingTextarea">Descripción</label>
-                </div>
+            <div class="col-md">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control form-control-sm" id="floatingInput" name="marca"
+                  value="{{equipo.marca}}" disabled>
+                <label for="floatingInput">Marca o fabricante</label>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control form-control-sm" id="floatingInput" name="proveedor"
+                  value="{{equipo.proveedor}}">
+                <label for="floatingInput">proveedor</label>
               </div>
             </div>
 
           </div>
 
+          <div class="row g-3">
 
-          <div class="card border-dark mb-2">
-
-            <div class="card-body">
-
-              <div class="row g-4">
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="ipGestion">
-                    <label for="floatingInput">Direccion IP</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="macAddress">
-                    <label for="floatingInput">Direccion MAC</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="rack">
-                    <label for="floatingInput">Rack</label>
-                  </div>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="urack">
-                    <label for="floatingInput">Unidad de Rack</label>
-                  </div>
-                </div>
-
+            <div class="col-md">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control form-control-sm" id="floatingInput" name="modelo"
+                  value="{{equipo.modelo}}">
+                <label for="floatingInput">Modelo</label>
               </div>
+            </div>
 
+            <div class="col-md">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control form-control-sm" id="floatingInput" name="serial" disabled
+                  value="{{equipo.serial}}">
+                <label for="floatingInput">Serial del equipo</label>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="form-floating mb-2">
+                <input type="text" class="form-control form-control-sm" id="floatingInput" name="placa"
+                  value="{{equipo.placa}}">
+                <label for="floatingInput">Placa de inventario</label>
+              </div>
             </div>
 
           </div>
 
+        </div>
 
-          <div class="card border-dark mb-2">
-
-            <div class="card-body">
-
-              <div class="row g-4">
-
-                <div class="col-md">
-                  <select class="form-select" aria-label="Default select example" name="linea">
-                    <option selected>Linea de servicio</option>
-                    <option value="1">LAN</option>
-                    <option value="2">Seguridad</option>
-                    <option value="3">WAN</option>
-                    <option value="4">Infraestructura</option>
-                    <option value="5">Desarrollo</option>
-                    <option value="6">Otro</option>
-                  </select>
-                </div>
-
-                <div class="col-md">
-                  <select class="form-select" aria-label="Default select example" name="tipo">
-                    <option selected>Tipo de equipo</option>
-                    <option value="1">Appliance</option>
-                    <option value="2">Servidor Fisico</option>
-                    <option value="3">Servidor Virtual</option>
-                    <option value="4">Switch</option>
-                    <option value="5">Router</option>
-                    <option value="6">AP</option>
-                    <option value="7">Teléfono</option>
-                  </select>
-                </div>
-
-                <div class="col-md">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked name="activo">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Equipo activo</label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="row g-1">
-
-                <div class="col-md">
-                  <div class="form-floating mt-3">
-                    <textarea class="form-control" name="sistemaOperativo" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Información del Sistema Operativo</label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="row g-1">
-
-                <div class="col-md">
-                  <div class="form-floating mt-3">
-                    <textarea class="form-control" name="infoAdicional" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Información Adicional relevante</label>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
+        <div class="row g-1">
+          <div class="col-md">
+            <div class="form-floating mb-2">
+              <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea">{{equipo.descripcion}}</textarea>
+              <label for="floatingTextarea">Descripción</label>              
+            </div>           
           </div>
-
-
-
-          <div class="card border-dark mb-2">
-
-            <div class="card-body">
-
-              <div class="row g-2">
-
-                <div class="col-md">
-
-                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker date">
-                    <input placeholder="Select date" type="text" id="fechaInst" class="form-control"
-                      name="fechaInstalacion">
-                    <label for="example">Fecha de Instalacion</label>
-                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
-                  </div>
-
-                  <script type="text/javascript">
-                    $(function () {
-                      $("#fechaInst").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
-                    });
-                  </script>
-
-                </div>
-
-                <div class="col-md">
-
-                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="text" id="fechaRet" class="form-control" name="fechaRetiro">
-                    <label for="example">Fecha de retiro</label>
-                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
-                  </div>
-
-                  <script type="text/javascript">
-                    $(function () {
-                      $("#fechaRet").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
-                    });
-                  </script>
-                </div>
-
-              </div>
-
-              <div class="row g-2">
-
-                <div class="col-md">
-                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="text" id="fechaVig" class="form-control"
-                      name="fechaFinSoporte">
-                    <label for="example">Vigencia de garantia o soporte de fabrica</label>
-                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
-                  </div>
-
-                  <script type="text/javascript">
-                    $(function () {
-                      $("#fechaVig").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
-                    });
-                  </script>
-
-                </div>
-
-                <div class="col-md">
-                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="text" id="fechaLic" class="form-control"
-                      name="fechaFinLicencia">
-                    <label for="example">Vigencia de Licenciamiento</label>
-                    <i class="fas fa-calendar input-prefix" tabindex=0></i>
-                  </div>
-
-                  <script type="text/javascript">
-
-                    $(function () {
-                      $("#fechaLic").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
-                    });
-
-                  </script>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
+        </div>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+
+
+      <div class="card border-dark mb-2">
+
+        <div class="card-body">
+
+          <div class="row g-4">
+
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="ipGestion"
+                  value="{{equipo.ipGestion}}">
+                <label for="floatingInput">Direccion IP</label>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="macAddress"
+                  value="{{equipo.macAddress}}">
+                <label for="floatingInput">Direccion MAC</label>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="rack" value="{{equipo.rack}}">
+                <label for="floatingInput">Rack</label>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="urack" value="{{equipo.urack}}">
+                <label for="floatingInput">Unidad de Rack</label>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-      </form>
- 
-<!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->
+
+
+      <div class="card border-dark mb-2">
+
+        <div class="card-body">
+
+          <div class="row g-3">
+
+            <div class="col-md">
+              <select class="form-select" aria-label="Default select example" name="linea" value="{{equipo.linea}}">
+                <option selected>{{equipo.linea}}</option>
+                <option value="LAN">LAN</option>
+                <option value="Seguridad">Seguridad</option>
+                <option value="WAN">WAN</option>
+                <option value="Infraestructura">Infraestructura</option>
+                <option value="Desarrollo">Desarrollo</option>
+                <option value="Otro">Otro</option>
+              </select>
+              
+
+            </div>
+            
+
+            <div class="col-md">
+              <select class="form-select" aria-label="Default select example" name="tipo" value="{{equipo.tipo}}">
+                <option selected>{{equipo.tipo}}</option>
+                <option value="Appliance">Appliance</option>
+                <option value="Servidor_Fisico">Servidor Fisico</option>
+                <option value="Servidor_Virtual">Servidor Virtual</option>
+                <option value="Switch">Switch</option>
+                <option value="Router">Router</option>
+                <option value="AP">AP</option>
+                <option value="Telefono">Teléfono</option>
+              </select>
+              
+            </div>            
+
+            <div class="col-md">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked name="activo"
+                  value="{{equipo.activo}}">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Equipo activo</label>
+              </div>
+            </div>
+
+          </div>
+
+         
+
+          <div class="row g-1">
+
+            <div class="col-md">
+              <div class="form-floating mt-3">
+                <textarea class="form-control" name="sistemaOperativo" id="floatingTextarea">{{equipo.sistemaOperativo}}</textarea>
+                <label for="floatingTextarea">Información del Sistema Operativo</label>
+              </div>
+               
+            </div>
+
+          </div>
+
+          <div class="row g-1">
+
+            <div class="col-md">
+              <div class="form-floating mt-3">
+                <textarea class="form-control" name="infoAdicional" id="floatingTextarea">{{equipo.infoAdicional}}</textarea>
+                <label for="floatingTextarea">Información Adicional relevante</label>
+              </div>
+               
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="card border-dark mb-2">
+
+        <div class="card-body">
+
+          <div class="row g-2">
+
+            <div class="col-md mb-4">
+
+              <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker date">
+                <input placeholder="Select date" type="text" id="fechaInst" class="form-control" name="fechaInstalacion"
+                  value="{{equipo.fechaInstalacion}}">
+                <label for="example">Fecha de Instalacion</label>
+                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+              </div>
+
+              <script type="text/javascript">
+                $(function () {
+                  $("#fechaInst").datepicker({
+                    autoclose: true,                   
+                  }).datepicker('update', new Date());
+                });
+              </script>
+
+              <input style="color:blue" type="text" class="form-control form-control-sm" id="floatingInput" disabled
+                value="{{equipo.fechaInstalacion}}">
+
+
+            </div>
+
+            <div class="col-md mb-4">
+
+              <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                <input placeholder="Select date" type="text" id="fechaRet" class="form-control" name="fechaRetiro"
+                  value="{{equipo.fechaRetiro}}">
+                <label for="example">Fecha de retiro</label>
+                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+              </div>
+
+              <script type="text/javascript">
+                $(function () {
+                  $("#fechaRet").datepicker({
+                    autoclose: true,                    
+                  }).datepicker('update', new Date());
+                });
+              </script>
+
+              <input style="color:blue" type="text" class="form-control form-control-sm" id="floatingInput" disabled
+                value="{{equipo.fechaRetiro}}">
+            </div>
+
+          </div>
+
+          <div class="row g-2">
+
+            <div class="col-md">
+              <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                <input placeholder="Select date" type="text" id="fechaVig" class="form-control" name="fechaFinSoporte"
+                  value="{{equipo.fechaFinSoporte}}">
+                <label for="example">Vigencia de garantia o soporte de fabrica</label>
+                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+              </div>
+
+              <script type="text/javascript">
+                $(function () {
+                  $("#fechaVig").datepicker({
+                    autoclose: true,                    
+                  }).datepicker('update', new Date());
+                });
+              </script>
+              <input style="color:blue" type="text" class="form-control form-control-sm" id="floatingInput" disabled
+                value="{{equipo.fechaFinSoporte}}">
+
+            </div>
+
+            <div class="col-md">
+              <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                <input placeholder="Select date" type="text" id="fechaLic" class="form-control" name="fechaFinLicencia"
+                  value="{{equipo.fechaFinLicencia}}">
+                <label for="example">Vigencia de Licenciamiento</label>
+                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+              </div>
+
+              <script type="text/javascript">
+
+                $(function () {
+                  $("#fechaLic").datepicker({
+                    autoclose: true,
+                    todayHighlight: true
+                  }).datepicker('update', new Date());
+                });
+
+              </script>
+              <input style="color:blue" type="text" class="form-control form-control-sm" id="floatingInput" disabled
+                value="{{equipo.fechaFinLicencia}}">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
+
+  </div>
+  <div class="modal-footer">
+    <button href="/" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+  </div>
+  </form>
+
+  <!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->
+
+</div>
 
 </div>

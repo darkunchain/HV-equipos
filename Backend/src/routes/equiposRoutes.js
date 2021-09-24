@@ -4,7 +4,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/', async (req,res) => {
-    const equipos = await equipoModel.find().lean()
+    const equipos = await equipoModel.find().lean().sort('_id')
 
     res.render('index', {equipos})
 })
@@ -37,12 +37,35 @@ router.post('/', async (req,res) => {
 
 
 router.get('/equipos/edit/:id', async (req,res) => {
-    const reqid = req.params.id
-    //console.log('reqid: ',reqid)
-    //console.log('otro: ',reqid.length)
-    //const equipo = await equipoModel.findById(req.params.id)
+    const reqid = req.params.id    
+    const equipo = await equipoModel.findById(req.params.id).lean()
+    if(equipo.fechaInstalacion){equipo.fechaInstalacion = equipo.fechaInstalacion.toISOString().substring(0,10);}
+    if(equipo.fechaInstalacion){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
+    if(equipo.fechaInstalacion){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
+    if(equipo.fechaInstalacion){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}
+    
+    
+    
 
-    res.render('partials/modalEquipoEdit', {reqid})
+    res.render('partials/modalEquipoEdit', {equipo})
+})
+
+
+router.put('/equipos/edit/:id', async (req,res) => {    
+
+    const editEquipo = {activo, serial, nombre, marca, modelo, descripcion, placa,
+        proveedor, fechaInstalacion, fechaRetiro, fechaFinSoporte,
+        fechaFinLicencia, ipGestion, macAddress, sistemaOperativo,
+        rack, urack, linea, tipo, infoAdicional} = req.body;
+        
+        console.log('editEquipo: ',editEquipo)
+
+    await equipoModel.findByIdAndUpdate(req.params.id, {activo, serial, nombre, marca, modelo, descripcion, placa,
+        proveedor, fechaInstalacion, fechaRetiro, fechaFinSoporte,
+        fechaFinLicencia, ipGestion, macAddress, sistemaOperativo,
+        rack, urack, linea, tipo, infoAdicional})
+
+    res.redirect('/')    
 })
 
 

@@ -27,7 +27,7 @@
   color: #353535!important;  
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */  
+::placeholder {
   font-size: 0.7rem!important;
 }
 
@@ -57,4 +57,38 @@ img, svg {
   width: 10rem;
   margin-left: 20px;
   text-align: center;
+}
+
+
+.container-edit, .container-edit-lg, .container-edit-md, .container-edit-sm {
+  max-width: 80%!important;
+}
+
+.container-edit, .container-edit-fluid, .container-edit-lg, .container-edit-md, .container-edit-sm, .container-edit-xl, .container-edit-xxl {
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-control {
+  font-size: 0.8rem!important;  
+}
+
+.md-form.md-outline {  
+  margin-bottom: 0.1rem!important;
+}
+
+.foredit {
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+.form-select {  
+  font-size: 0.8rem!important;  
+}
+
+.form-check-label {
+  font-size: 1rem!important;
 }

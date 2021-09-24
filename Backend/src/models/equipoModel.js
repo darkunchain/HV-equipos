@@ -27,6 +27,11 @@ const equipoSchema = new Schema({
     linea: {type: String,default: ''},
     tipo: {type: String,default: ''},
     infoAdicional: {type: String,default: ''},
-})
+});
+
+
+    //return this.fechaFinLicencia.toISOString().substring(0,10);
+    
+  
 
 module.exports = model('equipoModel', equipoSchema)

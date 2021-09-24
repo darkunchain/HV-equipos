@@ -36,6 +36,16 @@ router.post('/', async (req,res) => {
 })
 
 
+router.get('/equipos/edit/:id', async (req,res) => {
+    const reqid = req.params.id
+    //console.log('reqid: ',reqid)
+    //console.log('otro: ',reqid.length)
+    //const equipo = await equipoModel.findById(req.params.id)
+
+    res.render('partials/modalEquipoEdit', {reqid})
+})
+
+
 
 
 module.exports = router;

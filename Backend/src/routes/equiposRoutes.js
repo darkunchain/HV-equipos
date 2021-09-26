@@ -70,5 +70,27 @@ router.put('/equipos/edit/:id', async (req,res) => {
 
 
 
+router.get('/equipos/view/:id', async (req,res) => {
+    const reqid = req.params.id    
+    const equipo = await equipoModel.findById(req.params.id).lean()
+    if(equipo.activo = 'on'){
+        equipo.activo = 'SI'
+    }else{
+        equipo.activo = 'NO'
+    }
+    if(equipo.fechaInstalacion){equipo.fechaInstalacion = equipo.fechaInstalacion.toISOString().substring(0,10);}
+    if(equipo.fechaInstalacion){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
+    if(equipo.fechaInstalacion){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
+    if(equipo.fechaInstalacion){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}
+    
+    
+    
+
+    res.render('viewEquipo', {equipo})
+})
+
+
+
+
 
 module.exports = router;

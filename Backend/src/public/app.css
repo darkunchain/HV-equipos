@@ -59,6 +59,16 @@ img, svg {
   text-align: center;
 }
 
+.title-t-card-text{
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  background: #fff;  
+  margin-top: -23px;
+  width: 50%;
+  margin-left: 20px;
+  text-align: center;
+}
+
 
 .container-edit, .container-edit-lg, .container-edit-md, .container-edit-sm {
   max-width: 80%!important;

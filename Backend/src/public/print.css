@@ -1,0 +1,108 @@
+@media print {
+  .icon16 {
+    width: 16px;
+    height: 16px;
+    fill: #f00;
+  }
+  
+  .icon32 {
+    width: 32px;
+    height: 32px;
+    fill: #f00;
+  }
+  
+  .input-group {
+    position: relative;
+    display: block!important;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .card {
+    padding: 10px!important;
+  }
+  
+  .md-form.md-outline label {  
+    font-size: 0.9rem!important;
+    color: #353535!important;  
+  }
+  
+  ::placeholder {
+    font-size: 0.7rem!important;
+  }
+  
+  .btn-secondary {
+    color: #fff;
+    background-color: rgb(117, 117, 117) !important;
+  }
+  
+  .navbar-brand {  
+    margin-left: 1rem; 
+  }
+  
+  img, svg {
+    vertical-align: middle;
+    margin-right: 1rem;
+    width: 3rem;
+  }
+  
+  .form-floating>label {  
+    padding: .5rem .5rem; 
+  }
+  
+  .title-card-text{
+    color: rgb(0, 0, 0);
+    background: #fff;  
+    margin-top: -23px;
+    width: 10rem;
+    margin-left: 20px;
+    text-align: center;
+  }
+  
+  .title-t-card-text{
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    background: #fff;  
+    margin-top: -23px;
+    width: 60%;
+    margin-left: 20px;
+    text-align: center;
+  }
+  
+  
+  .container-edit, .container-edit-lg, .container-edit-md, .container-edit-sm {
+    max-width: 80%!important;
+  }
+  
+  .container-edit, .container-edit-fluid, .container-edit-lg, .container-edit-md, .container-edit-sm, .container-edit-xl, .container-edit-xxl {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .form-control {
+    font-size: 0.8rem!important;  
+  }
+  
+  .md-form.md-outline {  
+    margin-bottom: 0.1rem!important;
+  }
+  
+  .foredit {
+    font-size: 0.8rem;
+    margin-top: 20px;
+  }
+  
+  .form-select {  
+    font-size: 0.8rem!important;  
+  }
+  
+  .form-check-label {
+    font-size: 1rem!important;
+  }
+}
+
+

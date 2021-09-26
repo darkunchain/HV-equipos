@@ -13,15 +13,15 @@
             </div>
 
             <div class="row g-3">
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Proveedor: </strong>{{equipo.proveedor}}</p>
                 </div>
 
-                <div class="col-md">
+                <div class="col">
                     <p><strong>Modelo: </strong>{{equipo.modelo}}</p>
                 </div>
 
-                <div class="col-md">
+                <div class="col">
                     <p><strong>Serial: </strong>{{equipo.serial}}</p>
                 </div>
 
@@ -29,15 +29,15 @@
 
             <div class="row g-3">
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Linea de servicio: </strong>{{equipo.linea}}</p>
                 </div>
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Tipo de equipo: </strong>{{equipo.tipo}}</p>
                 </div>
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Placa de Inventario: </strong>{{equipo.placa}}</p>
                 </div>
 
@@ -46,15 +46,15 @@
 
             <div class="row g-3 mt-2">
 
-                <div class="col-md-8">
+                <div class="col-8">
                     <p> <strong>Sistema Operativo: </strong>{{equipo.sistemaOperativo}}</p>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-2">
                     <p> <strong>Rack No.: </strong>{{equipo.rack}}</p>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-2">
                     <p> <strong>Unidad de Rack: </strong>{{equipo.urack}}</p>
                 </div>
 
@@ -63,15 +63,15 @@
 
             <div class="row g-3">
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Dirección IP: </strong>{{equipo.ipGestion}}</p>
                 </div>
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Dirección MAC: </strong>{{equipo.macAddress}}</p>
                 </div>
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Equipo activo: {{equipo.activo}}</strong></p>
                 </div>
 
@@ -79,7 +79,7 @@
 
             <div class="row g-1">
 
-                <div class="col-md">
+                <div class="col">
                     <p> <strong>Información adicional: </strong>{{equipo.infoAdicional}}</p>
                 </div>
 
@@ -90,11 +90,16 @@
     </div>
 
 
-     <div class="card border-dark mb-4">
-        <div class="title-card-text">Activides realizadas sobre el equipo</div>
+    <div class="card border-dark mb-1">
+        <div class="title-card-text"><strong>Activides realizadas</strong></div>
         <div class="card-body">
+            <p>A continuacion se listan las actividades en orden cronológico ejecutadas sobre el equipo
+                <strong>{{equipo.nombre}}</strong>, adicionalmente se lista la información detallada de cada
+                actividad: quien la ejecutó, cuando la ejecutó, que actividades realizó y por que se realizó la
+                actividad.
+            </p>
         </div>
-     </div>
+    </div>
 
 
 

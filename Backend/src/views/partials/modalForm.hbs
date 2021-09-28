@@ -32,10 +32,12 @@
                 </div>
 
                 <div class="col-md">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="proveedor">
-                    <label for="floatingInput">proveedor</label>
-                  </div>
+                  <select class="form-select" aria-label="Default select example" name="proveedor">
+                    <option selected>{{proveedores.nombre}}</option>
+                    {{#each proveedores}}
+                    <option value="{{_id}}">{{nombre}}</option>                    
+                    {{/each}}
+                  </select>
                 </div>
 
               </div>
@@ -206,9 +208,11 @@
                   <script type="text/javascript">
                     $(function () {
                       $("#fechaInst").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
+                        format: 'yyyy/mm/dd',
+                    autoclose: true,
+                    todayHighlight: true,
+                    defaultDate: '2021/01/01',
+                  }).datepicker();
                     });
                   </script>
 
@@ -225,9 +229,11 @@
                   <script type="text/javascript">
                     $(function () {
                       $("#fechaRet").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
+                        format: 'yyyy/mm/dd',
+                    autoclose: true,
+                    todayHighlight: true,
+                    defaultDate: '2021/01/01',
+                  }).datepicker();
                     });
                   </script>
                 </div>
@@ -247,9 +253,11 @@
                   <script type="text/javascript">
                     $(function () {
                       $("#fechaVig").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
+                        format: 'yyyy/mm/dd',
+                    autoclose: true,
+                    todayHighlight: true,
+                    defaultDate: '2021/01/01',
+                  }).datepicker();
                     });
                   </script>
 
@@ -267,9 +275,11 @@
 
                     $(function () {
                       $("#fechaLic").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
+                        format: 'yyyy/mm/dd',
+                    autoclose: true,
+                    todayHighlight: true,
+                    defaultDate: '2021/01/01',
+                  }).datepicker();
                     });
 
                   </script>

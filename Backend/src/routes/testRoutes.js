@@ -1,8 +1,76 @@
 const express = require('express');
 const equipoModel = require('../models/equipoModel');
+const actividadModel = require('../models/actividadModel');
+const elementoModel = require('../models/elementoModel');
+const proveedorModel = require('../models/proveedorModel');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
+router.get('/actividadmanual', async (req,res) => {
+
+    const newActividad = new actividadModel({
+        
+    descripcion: 'Actividad de prueba 1',
+    ticket: 'INC000126544',
+    ejecutor: 'Luis Fernando Prieto Jimenez',
+    tipo: 'Correctivo',    
+    infoAdicional: 'Ninguna informacion',
+    fecha: '',
+    horaInicio: '',
+    horaFin: '', })
+
+    await newActividad.save() 
+
+    res.redirect('/')
+});
+
+
+
+
+
+router.get('/elementomanual', async (req,res) => {
+
+    const newElemento = new elementoModel({
+        tipo: 'memoria',   
+        descripcion: 'memoria RAM',    
+        equipo: '',    
+        infoAdicional: 'otra info',       
+})
+
+    await newElemento.save() 
+
+    res.redirect('/')
+});
+
+
+router.get('/equipomanual', async (req,res) => {
+
+    const newEquipo = new equipoModel({
+        activo: 'on',
+        serial: '82021821',
+        nombre: 'equipo generado manualmente',
+        marca: 'Sonicwall',
+        modelo: 'Supermassive 9200',    
+        descripcion: 'Descripcion del equipo',
+        placa: '000-123243',    
+        proveedor: "615248ce41a6d8a8a4d51d91",        
+        ipGestion: '172.20.20.20',
+        macAddress: '00:34:12:ed:54:ad',
+        sistemaOperativo: 'sistema operativo dl equipo',
+        rack: '8',
+        urack: '10',
+        linea: 'Seguridad',
+        tipo: 'Appliance',
+        infoAdicional: 'Informacion Adicional del equipo',
+        actividades: ["6152638d7077742d2889268e","6152641bf72d58063e7e403f"],
+        
+})
+
+    await newEquipo.save() 
+
+    res.redirect('/')
+});
 
 
 

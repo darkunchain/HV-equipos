@@ -3,12 +3,14 @@ const { Schema,model } = require('mongoose')
 
 const proveedorSchema = new Schema({    
     
-    pid: {
+   /*  pid: {
         type:String,    
         required:true,    
         unique:true    
-      },
+      }, */
+    nombre: {type:String,default: ''},
     representante: {type:String,default: ''},
+    orden: {type:String,default: ''},
     telRep: {type:String,default: ''},
     correoRep: {type: String,default: ''},    
     adicionalRep: {type: String,default: ''},    

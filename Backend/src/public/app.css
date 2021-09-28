@@ -14,6 +14,10 @@ p {
   text-align: justify!important;
 }
 
+label {  
+  font-size: 12px!important;
+}
+
 .input-group {
   position: relative;
   display: block!important;

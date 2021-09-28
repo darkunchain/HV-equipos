@@ -21,7 +21,7 @@
                 <div class="col-md">
                   <div class="form-floating mb-2">
                     <input type="text" class="form-control form-control-sm" id="floatingInput" name="nombre">
-                    <label for="floatingInput">Nombre del Representante</label>
+                    <label for="floatingInput">Proveedor</label>
                   </div>
                 </div>
 
@@ -31,14 +31,32 @@
 
                 <div class="col-md">
                   <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="modelo">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="representante">
+                    <label for="floatingInput">Nombre del Representante</label>
+                  </div>
+                </div>
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="orden">
+                    <label for="floatingInput">Número de orden</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row g-2">
+
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="telRep">
                     <label for="floatingInput">telefono</label>
                   </div>
                 </div>
 
                 <div class="col-md">
                   <div class="form-floating mb-2">
-                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="serial">
+                    <input type="text" class="form-control form-control-sm" id="floatingInput" name="correoRep">
                     <label for="floatingInput">Correo Electronico</label>
                   </div>
                 </div>
@@ -48,7 +66,7 @@
               <div class="row g-1">
                 <div class="col-md">
                   <div class="form-floating mb-2">
-                    <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
+                    <textarea class="form-control form-control-sm" id="floatingTextarea" name="adicionalRep"></textarea>
                     <label for="floatingTextarea">Información adicional</label>
                   </div>
                 </div>
@@ -59,8 +77,7 @@
                 <div class="col-md">
 
                   <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker date">
-                    <input placeholder="Select date" type="text" id="inicioSoporte" class="form-control"
-                      name="fechaInstalacion">
+                    <input placeholder="Select date" type="text" id="inicioSoporte" class="form-control" name="fechaInicio">                      
                     <label for="example">Fecha - Inicio de Contrato</label>
                     <i class="fas fa-calendar input-prefix" tabindex=0></i>
                   </div>
@@ -68,9 +85,11 @@
                   <script type="text/javascript">
                     $(function () {
                       $("#inicioSoporte").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
+                        format: 'yyyy/mm/dd',
+                    autoclose: true,
+                    todayHighlight: true,
+                    defaultDate: '2021/01/01',
+                  }).datepicker();
                     });
                   </script>
 
@@ -79,8 +98,7 @@
                 <div class="col-md">
 
                   <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="text" id="finSoporte" class="form-control"
-                      name="fechaRetiro">
+                    <input placeholder="Select date" type="text" id="finSoporte" class="form-control" name="fechaFin">                      
                     <label for="example">Fecha - Fin de Contrato</label>
                     <i class="fas fa-calendar input-prefix" tabindex=0></i>
                   </div>
@@ -88,9 +106,11 @@
                   <script type="text/javascript">
                     $(function () {
                       $("#finSoporte").datepicker({
-                        autoclose: true,
-                        todayHighlight: true
-                      }).datepicker('update', new Date());
+                        format: 'yyyy/mm/dd',
+                    autoclose: true,
+                    todayHighlight: true,
+                    defaultDate: '2021/01/01',
+                  }).datepicker();
                     });
                   </script>
                 </div>
@@ -110,7 +130,7 @@
 
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="ipGestion">
+                    <input type="text" class="form-control" id="floatingInput" name="URL">
                     <label for="floatingInput">URL de soporte o generacion de tickets</label>
                   </div>
                 </div>
@@ -121,14 +141,14 @@
 
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="ipGestion">
+                    <input type="text" class="form-control" id="floatingInput" name="telSoporte">
                     <label for="floatingInput">Telefono</label>
                   </div>
                 </div>
 
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" name="macAddress">
+                    <input type="text" class="form-control" id="floatingInput" name="correoSoporte">
                     <label for="floatingInput">Correo electrónico</label>
                   </div>
                 </div>
@@ -138,7 +158,7 @@
               <div class="row g-1">
                 <div class="col-md">
                   <div class="form-floating">
-                    <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
+                    <textarea class="form-control form-control-sm" name="adicionalSoporte" id="floatingTextarea"></textarea>
                     <label for="floatingTextarea">Información adicional</label>
                   </div>
                 </div>

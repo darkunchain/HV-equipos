@@ -34,30 +34,28 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">nombre</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Serial</th>
-      <th scope="col">Proveedor</th>
-      <th scope="col">Descripción</th>
+      <th scope="col">Representante</th>
+      <th scope="col">Orden</th>
+      <th scope="col">Contacto administrativo</th>
+      <th scope="col">contacto Soporte</th>
+      <th scope="col">Correo soporte</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
-    {{#each equipos }}
     
-    <tr>
-      
+    {{#each proveedores }}    
+    <tr>      
       <th scope="row">{{@index}}</th>
-      <td>{{nombre}}</td>
-      <td>{{marca}}</td>
-      <td>{{modelo}}</td>
-      <td>{{serial}}</td>
-      <td>{{proveedor}}</td>
-      <td>{{descripcion}}</td>
-      <td><a href="#"><i class="fas fa-edit"></i></a>
-      <a href="#"><i class="fas fa-eye"></i></a>
+      <td><a href="/proveedores/view/{{_id}}"></a>{{nombre}}</td>
+      <td>{{representante}}</td>
+      <td>{{orden}}</td>
+      <td>{{telRep}}</td>
+      <td>{{telSoporte}}</td>
+      <td>{{correoSoporte}}</td>
+      <td><a href="/proveedores/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+      <a href="/proveedores/view/{{_id}}"><i class="fas fa-eye"></i></a>
       </td>
-
     </tr>
     {{/each}}    
   </tbody>

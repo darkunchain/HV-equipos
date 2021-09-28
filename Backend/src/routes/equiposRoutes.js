@@ -1,12 +1,14 @@
 const express = require('express');
 const equipoModel = require('../models/equipoModel');
+const proveedorModel = require('../models/proveedorModel');
 const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/', async (req,res) => {
-    const equipos = await equipoModel.find().lean().sort('_id')
-
-    res.render('index', {equipos})
+    const equipos = await equipoModel.find().lean().populate()
+    const proveedores = await proveedorModel.find().lean();
+    
+    res.render('index', {equipos, proveedores})
 })
 
 router.post('/', async (req,res) => {
@@ -16,6 +18,11 @@ router.post('/', async (req,res) => {
         fechaFinLicencia, ipGestion, macAddress, sistemaOperativo,
         rack, urack, linea, tipo, infoAdicional} = req.body;
         
+    
+    const proveedorDrop = await proveedorModel.find();
+    
+    
+
     const errors =[];
     if(!serial){
         errors.push({text: 'Debe ingresar el serial del equipo'})
@@ -29,25 +36,27 @@ router.post('/', async (req,res) => {
         fechaFinLicencia, ipGestion, macAddress, sistemaOperativo,
         rack, urack, linea, tipo, infoAdicional});
 
-        console.log('newEquipo: ', newEquipo)
+      
 
         await newEquipo.save()
-    res.render('index')
+    res.render('index', {proveedor})
 })
 
 
 router.get('/equipos/edit/:id', async (req,res) => {
     const reqid = req.params.id    
-    const equipo = await equipoModel.findById(req.params.id).lean()
+    const equipo = await equipoModel.findById(req.params.id).lean().populate('proveedor').populate('actividades').populate('elemento')
+    const proveedores = await proveedorModel.find().lean()
+    const activities = equipo.actividades   
+
     if(equipo.fechaInstalacion){equipo.fechaInstalacion = equipo.fechaInstalacion.toISOString().substring(0,10);}
-    if(equipo.fechaInstalacion){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
-    if(equipo.fechaInstalacion){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
-    if(equipo.fechaInstalacion){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}
-    
+    if(equipo.fechaRetiro){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
+    if(equipo.fechaFinSoporte){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
+    if(equipo.fechaFinLicencia){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}
     
     
 
-    res.render('partials/modalEquipoEdit', {equipo})
+    res.render('partials/modalEquipoEdit', {equipo,proveedores,activities})
 })
 
 
@@ -58,7 +67,7 @@ router.put('/equipos/edit/:id', async (req,res) => {
         fechaFinLicencia, ipGestion, macAddress, sistemaOperativo,
         rack, urack, linea, tipo, infoAdicional} = req.body;
         
-        console.log('editEquipo: ',editEquipo)
+        
 
     await equipoModel.findByIdAndUpdate(req.params.id, {activo, serial, nombre, marca, modelo, descripcion, placa,
         proveedor, fechaInstalacion, fechaRetiro, fechaFinSoporte,
@@ -72,21 +81,41 @@ router.put('/equipos/edit/:id', async (req,res) => {
 
 router.get('/equipos/view/:id', async (req,res) => {
     const reqid = req.params.id    
-    const equipo = await equipoModel.findById(req.params.id).lean()
+    const equipo = await equipoModel.findById(req.params.id).lean().populate()
     if(equipo.activo = 'on'){
         equipo.activo = 'SI'
     }else{
         equipo.activo = 'NO'
     }
     if(equipo.fechaInstalacion){equipo.fechaInstalacion = equipo.fechaInstalacion.toISOString().substring(0,10);}
-    if(equipo.fechaInstalacion){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
-    if(equipo.fechaInstalacion){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
-    if(equipo.fechaInstalacion){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}
-    
-    
-    
+    if(equipo.fechaRetiro){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
+    if(equipo.fechaFinSoporte){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
+    if(equipo.fechaFinLicencia){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}        
 
     res.render('viewEquipo', {equipo})
+})
+
+router.get('/proveedores', async (req,res) => {
+    const equipos = await equipoModel.find().lean().sort('_id')
+    const proveedores = await proveedorModel.find().lean();    
+
+    res.render('proveedores', {equipos, proveedores})
+})
+
+router.post('/proveedores', async (req,res) => {
+   
+
+    const {nombre, representante, orden, telRep, correoRep, adicionalRep, fechaInicio, 
+    fechaFin, URL, telSoporte, correoSoporte, adicionalSoporte} = req.body;    
+        
+    
+     const newProveedor = new proveedorModel({nombre, representante, orden, telRep, correoRep, adicionalRep, fechaInicio, 
+        fechaFin, URL, telSoporte, correoSoporte, adicionalSoporte});
+
+        
+
+        await newProveedor.save() 
+    res.render('proveedores')
 })
 
 

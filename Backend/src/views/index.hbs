@@ -46,14 +46,15 @@
   <tbody>
     {{#each equipos }}
     
+    
     <tr>
       
       <th scope="row">{{@index}}</th>
-      <td>{{nombre}}</td>
+      <td><a href="/equipos/view/{{_id}}">{{nombre}}</a></td>
       <td>{{marca}}</td>
       <td>{{modelo}}</td>
       <td>{{serial}}</td>
-      <td>{{proveedor}}</td>
+      <td>{{proveedor.nombre}}</td>
       <td>{{descripcion}}</td>
       <td>        
         <a href="/equipos/edit/{{_id}}" ><i class="fas fa-edit"></i></a>
@@ -61,6 +62,7 @@
       </td>
 
     </tr>
+    
     {{/each}}    
 
     

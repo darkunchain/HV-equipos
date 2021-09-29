@@ -14,7 +14,7 @@
 
             <div class="row g-3">
                 <div class="col">
-                    <p> <strong>Proveedor: </strong>{{equipo.proveedor}}</p>
+                    <p> <strong>Proveedor: </strong>{{equipo.proveedor.nombre}}</p>
                 </div>
 
                 <div class="col">
@@ -59,7 +59,7 @@
                 </div>
 
             </div>
-            
+
 
             <div class="row g-3">
 
@@ -81,7 +81,7 @@
 
                 <div class="col">
                     <p> <strong>Fecha Instalación: </strong>{{equipo.fechaInstalacion}}</p>
-                </div>                
+                </div>
 
                 <div class="col">
                     <p> <strong>Vigencia Soporte: {{equipo.fechaFinSoporte}}</strong></p>
@@ -120,6 +120,50 @@
                 actividad: quien la ejecutó, cuando la ejecutó, que actividades realizó y por que se realizó la
                 actividad.
             </p>
+        </div>
+    </div>
+
+
+    <div class="card border-dark mb-1 mt-4">
+        <div class="title-card-text"><strong>Listado de Activides</strong></div>
+        <div class="card-body">
+
+            {{#each activities }}
+
+            <div class="card border-primary mb-2">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td><strong>Fecha</strong><h10> (AAAA-MM-DD)</h10>: {{this.fecha}}</td>
+                                <td><strong>Hora de Inicio:</strong> {{this.horaInicio}}</td>
+                                <td><strong>Hora de Finalizacion:</strong> {{this.horaFin}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Descripcion de la Actividad:</strong>
+                                    <div>{{this.descripcion}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ticket No.:</strong> {{this.ticket}}</td>
+                                <td><strong>Quien Realizó la Actividad:</strong>
+                                    <div>{{this.ejecutor}}</div>
+                                </td>
+                                <td><strong>Tipo de actividad:</strong> {{this.tipo}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Informacion Adicional:</strong>
+                                    <div>{{this.infoAdicional}}</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            {{/each}}
+
         </div>
     </div>
 

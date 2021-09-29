@@ -8,15 +8,7 @@
       <div class="card border-dark mb-2">
         <div class="card-body">
 
-         {{!--  {{#each activities }}
-          <div class="row g-3">
-            <div class="col-md">{{this.descripcion}}</div>
-            <div class="col-md">{{this.ticket}}</div>
-            <div class="col-md">{{this.tipo}}</div>
-            <div class="col-md">{{this.ejecutor}}</div>  
-          </div>
-          {{/each}} --}}
-
+         
           <div class="row g-3">
 
             <div class="col-md">
@@ -38,7 +30,7 @@
             <div class="col-md">
                   <label for="">Proveedor</label>
                   <select class="form-select" aria-label="Default select example" name="proveedor">
-                    <option selected>{{equipo.proveedores.nombre}}</option>
+                    <option selected>{{equipo.proveedor.nombre}}</option>
                     {{#each proveedores}}
                     <option value="{{_id}}">{{nombre}}</option>                    
                     {{/each}}

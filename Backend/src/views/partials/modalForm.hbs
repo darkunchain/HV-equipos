@@ -32,10 +32,11 @@
                 </div>
 
                 <div class="col-md">
+                  <label for="example">Proveedor</label>
                   <select class="form-select" aria-label="Default select example" name="proveedor">
                     <option selected>{{proveedores.nombre}}</option>
                     {{#each proveedores}}
-                    <option value="{{_id}}">{{nombre}}</option>                    
+                    <option value="{{_id}}">{{nombre}}</option>
                     {{/each}}
                   </select>
                 </div>
@@ -67,17 +68,17 @@
 
               </div>
 
-            </div>
 
-            <div class="row g-1">
-              <div class="col-md">
-                <div class="form-floating mb-2">
-                  <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
-                  <label for="floatingTextarea">Descripción</label>
+
+              <div class="row g-1">
+                <div class="col-md">
+                  <div class="form-floating mb-2">
+                    <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Descripción</label>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
 
 
@@ -209,10 +210,10 @@
                     $(function () {
                       $("#fechaInst").datepicker({
                         format: 'yyyy/mm/dd',
-                    autoclose: true,
-                    todayHighlight: true,
-                    defaultDate: '2021/01/01',
-                  }).datepicker();
+                        autoclose: true,
+                        todayHighlight: true,
+                        defaultDate: '2021/01/01',
+                      }).datepicker();
                     });
                   </script>
 
@@ -230,10 +231,10 @@
                     $(function () {
                       $("#fechaRet").datepicker({
                         format: 'yyyy/mm/dd',
-                    autoclose: true,
-                    todayHighlight: true,
-                    defaultDate: '2021/01/01',
-                  }).datepicker();
+                        autoclose: true,
+                        todayHighlight: true,
+                        defaultDate: '2021/01/01',
+                      }).datepicker();
                     });
                   </script>
                 </div>
@@ -254,10 +255,10 @@
                     $(function () {
                       $("#fechaVig").datepicker({
                         format: 'yyyy/mm/dd',
-                    autoclose: true,
-                    todayHighlight: true,
-                    defaultDate: '2021/01/01',
-                  }).datepicker();
+                        autoclose: true,
+                        todayHighlight: true,
+                        defaultDate: '2021/01/01',
+                      }).datepicker();
                     });
                   </script>
 
@@ -276,10 +277,10 @@
                     $(function () {
                       $("#fechaLic").datepicker({
                         format: 'yyyy/mm/dd',
-                    autoclose: true,
-                    todayHighlight: true,
-                    defaultDate: '2021/01/01',
-                  }).datepicker();
+                        autoclose: true,
+                        todayHighlight: true,
+                        defaultDate: '2021/01/01',
+                      }).datepicker();
                     });
 
                   </script>

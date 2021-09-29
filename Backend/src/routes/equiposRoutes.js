@@ -5,7 +5,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/', async (req,res) => {
-    const equipos = await equipoModel.find().lean().populate()
+    const equipos = await equipoModel.find().lean().populate('proveedor')
     const proveedores = await proveedorModel.find().lean();
     
     res.render('index', {equipos, proveedores})
@@ -47,7 +47,8 @@ router.get('/equipos/edit/:id', async (req,res) => {
     const reqid = req.params.id    
     const equipo = await equipoModel.findById(req.params.id).lean().populate('proveedor').populate('actividades').populate('elemento')
     const proveedores = await proveedorModel.find().lean()
-    const activities = equipo.actividades   
+    const activities = equipo.actividades
+    
 
     if(equipo.fechaInstalacion){equipo.fechaInstalacion = equipo.fechaInstalacion.toISOString().substring(0,10);}
     if(equipo.fechaRetiro){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
@@ -81,7 +82,7 @@ router.put('/equipos/edit/:id', async (req,res) => {
 
 router.get('/equipos/view/:id', async (req,res) => {
     const reqid = req.params.id    
-    const equipo = await equipoModel.findById(req.params.id).lean().populate()
+    const equipo = await equipoModel.findById(req.params.id).lean().populate('proveedor')
     if(equipo.activo = 'on'){
         equipo.activo = 'SI'
     }else{
@@ -90,9 +91,23 @@ router.get('/equipos/view/:id', async (req,res) => {
     if(equipo.fechaInstalacion){equipo.fechaInstalacion = equipo.fechaInstalacion.toISOString().substring(0,10);}
     if(equipo.fechaRetiro){equipo.fechaRetiro = equipo.fechaRetiro.toISOString().substring(0,10);}
     if(equipo.fechaFinSoporte){equipo.fechaFinSoporte = equipo.fechaFinSoporte.toISOString().substring(0,10);}
-    if(equipo.fechaFinLicencia){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}        
+    if(equipo.fechaFinLicencia){equipo.fechaFinLicencia = equipo.fechaFinLicencia.toISOString().substring(0,10);}
+    
+    
+    const equipoActividades = await equipoModel.findById(req.params.id).lean().populate('actividades')
+    const activities = equipoActividades.actividades
+    console.log('actividades1: ', activities)
 
-    res.render('viewEquipo', {equipo})
+    
+    activities.forEach(element => {
+        if(element.fecha){
+            element.fecha = element.fecha.toISOString().substring(0,10);
+        }
+                
+    });   
+    
+    
+    res.render('viewEquipo', {equipo,activities})
 })
 
 router.get('/proveedores', async (req,res) => {

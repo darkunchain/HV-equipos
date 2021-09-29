@@ -1,0 +1,148 @@
+<div class="container">
+
+    <div class="container-edit">
+
+        <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
+        <form action="/actividades/new/{{reqid}}" method="POST">
+
+            <div class="card border-dark mb-2 mt-3">
+                <div class="card-body">
+
+
+                    <div class="row g-1">
+                        <div class="col-md">
+                            <div class="form-floating mb-2">
+                                <textarea class="form-control form-control-sm" name="descripcion"
+                                    id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Descripción de la actividad</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row g-3">
+
+                        <div class="col-md">
+                            <div class="form-floating mb-2">
+                                <input type="text" class="form-control form-control-sm" id="floatingInput"
+                                    name="ejecutor">
+                                <label for="floatingInput">Quien Realiza la Actividad</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md">
+                            <div class="form-floating mb-2">
+                                <input type="text" class="form-control form-control-sm" id="floatingInput" name="marca">
+                                <label for="floatingInput">Ticket</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md">
+                            <label for="example">Tipo de mantenimiento</label>
+                            <select class="form-select" aria-label="Default select example" name="tipo">
+                                <option selected>Preventivo</option>
+                                <option value="Correctivo">Correctivo</option>
+                                <option value="Actualizacion">Actualización</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row g-3">
+
+                        <div class="col-md">
+
+                            <div id="date-picker-example"
+                                class="md-form md-outline input-with-post-icon datepicker date">
+                                <input placeholder="Select date" type="text" id="fechaAct" class="form-control"
+                                    name="fecha">
+                                <label for="example">Fecha de la Actividad</label>
+                                <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                            </div>
+
+                            <script type="text/javascript">
+                                $(function () {
+                                    $("#fechaAct").datepicker({
+                                        format: 'yyyy/mm/dd',
+                                        autoclose: true,
+                                        todayHighlight: true,
+                                        defaultDate: '2021/01/01',
+                                    }).datepicker();
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md">
+                            <div class="form-floating mb-2">
+                                <label for="example">Hora de Inicio</label>
+                                <input type="text" id="horaInicio" data-format="HH:mm" data-template="HH : mm"
+                                    name="horaInicio">
+                                <script>
+                                    $(function () {
+                                        $('#horaInicio').combodate({
+                                            firstItem: 'name', 
+                                            minuteStep: 1
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md">
+                            <div class="form-floating mb-2">
+                                <label for="example">Hora de Finalización</label>
+                                <input type="text" id="horaFin" data-format="HH:mm" data-template="HH : mm"
+                                    name="horaFin">
+                                <script>
+                                    $(function () {
+                                        $('#horaFin').combodate({
+                                            firstItem: 'name', 
+                                            minuteStep: 1
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                       
+
+                    </div>
+
+                    <div class="row g-1">
+                        <div class="col-md">
+                            <div class="form-floating mb-2">
+                                <textarea class="form-control form-control-sm" name="infoAdicional"
+                                    id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Informacion Adicional de la actividad</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- %%%%%%%%%%%%%% footer Modal %%%%%%%%%%%%%% -->
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+
+
+        <!-- %%%%%%%%%%%%%% Fin Modal %%%%%%%%%%%%%% -->
+
+    </div>
+</div>

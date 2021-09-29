@@ -8,6 +8,15 @@
   body {
     font-size: 10px!important;
   }
+
+  table td {
+    font-size: 10px!important;    
+  }
+
+  h10 {
+    font-size: 7px!important;
+    color: gray;
+  }
   
   .icon32 {
     width: 32px;

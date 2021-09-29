@@ -30,6 +30,8 @@
 {{>modalForm}}
 
 
+
+
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -44,9 +46,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each equipos }}
-    
-    
+    {{#each equipos }}    
     <tr>
       
       <th scope="row">{{@index}}</th>
@@ -57,8 +57,11 @@
       <td>{{proveedor.nombre}}</td>
       <td>{{descripcion}}</td>
       <td>        
-        <a href="/equipos/edit/{{_id}}" ><i class="fas fa-edit"></i></a>
-      <a href="/equipos/view/{{_id}}"><i class="fas fa-eye"></i></a>
+        <a id="iconedit" href="/equipos/edit/{{_id}}" ><i class="fas fa-edit"></i></a><span class="overtext" id="onhovericedit">Editar Equipo</span>
+        <a id="iconview" href="/equipos/view/{{_id}}"><i class="fas fa-eye"></i></a><span class="overtext" id="onhovericview">Ver Hoja de vida</span>
+        <a id="iconnew" href="/actividades/new/{{_id}}"><i class="fas fa-file"></i></a><span class="overtext" id="onhovericnew">Nueva actividad</span>
+        
+        
       </td>
 
     </tr>

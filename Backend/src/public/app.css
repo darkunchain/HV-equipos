@@ -15,7 +15,45 @@ p {
 }
 
 label {  
-  font-size: 12px!important;
+  font-size: 0.9rem!important;
+}
+
+#onhovericedit{
+  visibility: hidden;
+}
+#iconedit:hover ~ #onhovericedit{
+  visibility: visible;
+}
+
+#onhovericview{
+  visibility: hidden;
+}
+#iconview:hover ~ #onhovericview{
+  visibility: visible;
+}
+
+#onhovericnew{
+  visibility: hidden;
+}
+#iconnew:hover ~ #onhovericnew{
+  visibility: visible;
+}
+
+.hour {
+  font-size: 0.8rem!important;
+  margin-top: 40px!important;
+}
+
+.minute {
+  font-size: 0.8rem!important;
+  margin-top: 40px!important;
+}
+
+.overtext {
+color: blue;
+font-size: 0.8rem;
+position: absolute;
+margin-top: -20px;
 }
 
 .input-group {
@@ -30,13 +68,18 @@ label {
   padding: 10px!important;
 }
 
+h10 {
+  font-size: 10px;
+  color: gray;
+}
+
 .md-form.md-outline label {  
   font-size: 0.9rem!important;
   color: #353535!important;  
 }
 
 ::placeholder {
-  font-size: 0.7rem!important;
+  font-size: 0.8rem!important;
 }
 
 .btn-secondary {

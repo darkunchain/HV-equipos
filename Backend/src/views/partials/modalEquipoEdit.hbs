@@ -3,12 +3,12 @@
   <div class="container-edit">
     <!-- %%%%%%%%%%%%%% Formulario Modal %%%%%%%%%%%%%% -->
     <form action="/equipos/edit/{{equipo._id}}?_method=PUT" method="POST" class="p-4">
-    <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="_method" value="PUT">
 
       <div class="card border-dark mb-2">
         <div class="card-body">
 
-         
+
           <div class="row g-3">
 
             <div class="col-md">
@@ -28,14 +28,14 @@
             </div>
 
             <div class="col-md">
-                  <label for="">Proveedor</label>
-                  <select class="form-select" aria-label="Default select example" name="proveedor">
-                    <option selected>{{equipo.proveedor.nombre}}</option>
-                    {{#each proveedores}}
-                    <option value="{{_id}}">{{nombre}}</option>                    
-                    {{/each}}
-                  </select>
-                </div>
+              <label for="">Proveedor</label>
+              <select class="form-select" aria-label="Default select example" name="proveedor">
+                <option value="{{proveedor._id}}" selected>{{proveedor.nombre}}</option>
+                {{#each proveedores}}
+                <option value="{{_id}}">{{nombre}}</option>
+                {{/each}}
+              </select>
+            </div>
 
           </div>
 
@@ -72,9 +72,10 @@
         <div class="row g-1">
           <div class="col-md">
             <div class="form-floating mb-2">
-              <textarea class="form-control form-control-sm" name="descripcion" id="floatingTextarea">{{equipo.descripcion}}</textarea>
-              <label for="floatingTextarea">Descripción</label>              
-            </div>           
+              <textarea class="form-control form-control-sm" name="descripcion"
+                id="floatingTextarea">{{equipo.descripcion}}</textarea>
+              <label for="floatingTextarea">Descripción</label>
+            </div>
           </div>
         </div>
 
@@ -140,10 +141,10 @@
                 <option value="Desarrollo">Desarrollo</option>
                 <option value="Otro">Otro</option>
               </select>
-              
+
 
             </div>
-            
+
 
             <div class="col-md">
               <select class="form-select" aria-label="Default select example" name="tipo" value="{{equipo.tipo}}">
@@ -156,8 +157,8 @@
                 <option value="AP">AP</option>
                 <option value="Telefono">Teléfono</option>
               </select>
-              
-            </div>            
+
+            </div>
 
             <div class="col-md">
               <div class="form-check form-switch">
@@ -169,16 +170,17 @@
 
           </div>
 
-         
+
 
           <div class="row g-1">
 
             <div class="col-md">
               <div class="form-floating mt-3">
-                <textarea class="form-control" name="sistemaOperativo" id="floatingTextarea">{{equipo.sistemaOperativo}}</textarea>
+                <textarea class="form-control" name="sistemaOperativo"
+                  id="floatingTextarea">{{equipo.sistemaOperativo}}</textarea>
                 <label for="floatingTextarea">Información del Sistema Operativo</label>
               </div>
-               
+
             </div>
 
           </div>
@@ -187,10 +189,11 @@
 
             <div class="col-md">
               <div class="form-floating mt-3">
-                <textarea class="form-control" name="infoAdicional" id="floatingTextarea">{{equipo.infoAdicional}}</textarea>
+                <textarea class="form-control" name="infoAdicional"
+                  id="floatingTextarea">{{equipo.infoAdicional}}</textarea>
                 <label for="floatingTextarea">Información Adicional relevante</label>
               </div>
-               
+
             </div>
 
           </div>
@@ -296,7 +299,7 @@
 
                 $(function () {
                   $("#fechaLic").datepicker({
-                    assumeNearbyYear: true,                    
+                    assumeNearbyYear: true,
                     format: 'yyyy/mm/dd',
                     autoclose: true,
                     todayHighlight: true,
@@ -311,6 +314,19 @@
             </div>
 
           </div>
+
+          <div class="row g-1 hidden">
+
+            <div class="col-md hidden">
+              <div class="form-floating mt-3">
+                <textarea class="form-control hidden" name="actividades"
+                  id="floatingTextarea">615522a43eaf0f11d97cac94</textarea>
+                <label for="floatingTextarea"></label>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
 

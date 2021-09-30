@@ -11,11 +11,11 @@ router.get('/actividadmanual', async (req,res) => {
 
     const newActividad = new actividadModel({
         
-    descripcion: 'Actividad de prueba 1',
-    ticket: 'INC000126544',
-    ejecutor: 'Luis Fernando Prieto Jimenez',
-    tipo: 'Correctivo',    
-    infoAdicional: 'Ninguna informacion',
+    descripcion: '',
+    ticket: '',
+    ejecutor: '',
+    tipo: 'Correctiv',    
+    infoAdicional: '',
     fecha: '',
     horaInicio: '',
     horaFin: '', })

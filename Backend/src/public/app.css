@@ -18,6 +18,11 @@ label {
   font-size: 0.9rem!important;
 }
 
+.hidden{
+  visibility: hidden;
+  height: 0px;
+}
+
 #onhovericedit{
   visibility: hidden;
 }
